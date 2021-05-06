@@ -347,6 +347,7 @@ div.form:hover button.delete-button {
 
   input {
     font-size: 0.9rem;
+    padding-top: 0;
   }
 
   /* Forms */
