@@ -1,0 +1,404 @@
+/* Global tags */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  width: min(90%, 40rem);
+  margin-bottom: 2rem;
+  color: hsl(0, 0%, 98%);
+  letter-spacing: 1rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+  padding-top: 4px;
+  font-family: "Josefin Sans";
+}
+
+li {
+  padding-top: 4px;
+}
+
+p {
+  font-size: 0.9rem;
+  opacity: 50%;
+}
+
+/* Theme dependency  */
+
+.dark-theme {
+  background-color: hsl(235, 21%, 11%);
+  color: hsl(234, 39%, 85%);
+}
+
+.light-theme {
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(235, 19%, 35%);
+}
+
+.dark-theme input {
+  color: hsl(234, 39%, 85%);
+}
+
+.light-theme input {
+  color: hsl(235, 19%, 35%);
+}
+
+.dark-theme > main {
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+}
+
+.light-theme > main {
+  background-image: url(../images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+}
+
+.dark-theme > main > header > .theme-toggle-btn {
+  background-image: url(../images/icon-sun.svg);
+}
+
+.light-theme > main > header > .theme-toggle-btn {
+  background-image: url(../images/icon-moon.svg);
+}
+
+.dark-theme div.form {
+  background-color: hsl(235, 24%, 19%);
+}
+
+.light-theme div.form {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.dark-theme .todo-list .form {
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+}
+
+.light-theme .todo-list .form {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+/* Gradient border with radius by https://gist.github.com/stereokai */
+
+.dark-theme .btn:hover {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: double 1px transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(hsl(235, 24%, 19%), hsl(235, 24%, 19%)),
+    radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.light-theme .btn:hover {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: double 1px transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 98%)),
+    radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* ------------------ */
+
+.dark-theme .footer-section {
+  background-color: hsl(235, 24%, 19%);
+}
+
+.light-theme .footer-section {
+  background-color: hsl(0, 0%, 98%);
+}
+
+/* Input and todo forms */
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+  height: 4rem;
+  width: 100%;
+}
+
+.draggable-form {
+  cursor: move;
+}
+
+.selected {
+  opacity: 0.6;
+}
+
+.input-form {
+  margin-bottom: 2rem;
+  width: min(90%, 40rem);
+  border-radius: 5px;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(90%, 40rem);
+}
+
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+}
+
+.todo-item:hover {
+  cursor: pointer;
+  color: hsl(236, 33%, 92%);
+}
+
+.completed-todo {
+  text-decoration: line-through;
+}
+
+.completed-todo .todo-item {
+  opacity: 50%;
+}
+
+
+
+/* buttons */
+
+.theme-toggle-btn {
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 11px;
+}
+
+.btn {
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  background: transparent;
+  border-color: hsl(236, 9%, 61%);
+  position: relative;
+  text-align: center;
+}
+
+.delete-button {
+  background-image: url(../images/icon-cross.svg);
+  background-color: transparent;
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  border: none;
+  visibility: hidden;
+}
+
+div.form:hover button.delete-button {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.complete.btn:hover {
+  background-image: url(../images/icon-check.svg),
+    linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.complete {
+  background-image: url(../images/icon-check.svg),
+    linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.filter-button {
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+.filter-button-used {
+  color: hsl(220, 98%, 61%);
+  opacity: 100%;
+}
+
+
+/* footer part */
+
+.footer {
+  font-size: 1rem;
+  width: min(90%, 40rem);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  color: hsl(236, 9%, 61%);
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 1rem;
+}
+
+
+
+.left-section p {
+  margin-right: auto;
+}
+
+.middle-section {
+  font-weight: 700;
+}
+
+.right-section p {
+  margin-left: auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+/* Animation */
+
+.animated {
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+/* Responsiveness */
+
+@media (max-width: 720px) {
+
+  /* Global tags */
+  header {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  main {
+    max-width: 375px;
+    padding-top: 3rem;
+    font-size: 0.9rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  /* Forms */
+
+  .form {
+    height: 3rem;
+  }
+
+  /* Buttons */
+
+  .delete-button {
+    visibility: visible;
+  }
+  /* footer section */
+
+  .footer {
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+
+  .footer-section.left-section {
+    border-bottom-left-radius: 5px;
+  }
+
+  .footer-section.right-section {
+    border-bottom-right-radius: 5px;
+    order: 2;
+  }
+
+  .middle-section {
+    flex: 1 1 100%;
+    order: 3;
+  }
+
+  .footer-section.middle-section {
+    border-radius: 5px;
+  }
+
+  /* Theme dependency */
+
+  .dark-theme > main {
+    background-image: url(../images/bg-mobile-dark.jpg);
+  }
+
+  .light-theme > main {
+    background-image: url(../images/bg-mobile-light.jpg);
+  }
+
+  
+
+  
+}

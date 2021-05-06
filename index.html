@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body class="dark-theme animated">
+    <main>
+      <header>
+        <h1>TODO</h1>
+        <button class="theme-toggle-btn animated"></button>
+      </header>
+
+      <!-- Форма для ввода задачи -->
+      <div class="form input-form animated">
+        <button class="btn todo-button" type="submit">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/></svg> -->
+          <!-- <i class="fas fa-plus-square"></i> -->
+        </button>
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="Create a new todo..."
+        />
+      </div>
+
+      <div class="todo-form">
+        <ul class="todo-list"><div draggable="true" class="form animated draggable-form">
+            <button class="btn completed-button"></button>
+            <li class="todo-item">Active todo</li>
+            <button class="delete-button"></button>
+          </div><div draggable="true" class="form animated draggable-form completed-todo">
+            <button class="btn completed-button complete"></button>
+            <li class="todo-item">Completed todo</li>
+            <button class="delete-button"></button>
+          </div></ul>
+      </div>
+
+      <div class="footer">
+        <div class="left-section footer-section animated">
+          <p id="items-left">
+            <!-- Add dynamic number -->
+            items left
+          </p>
+        </div>
+        <div class="middle-section footer-section animated">
+          <p class="filter-button">All</p>
+          <p class="filter-button">Active</p>
+          <p class="filter-button">Completed</p>
+        </div>
+        <div class="right-section footer-section animated">
+          <p class="filter-button">Clear Completed</p>
+        </div>
+      </div>
+
+      <p>Drag and drop to reorder list</p>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/trnvmkhl">Troynov Mikhail</a>.
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
