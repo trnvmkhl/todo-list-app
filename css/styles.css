@@ -241,6 +241,7 @@ p {
   background-position: center;
   border: none;
   visibility: hidden;
+  flex-shrink: 0;
 }
 
 div.form:hover button.delete-button {
