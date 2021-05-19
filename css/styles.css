@@ -143,14 +143,19 @@ p {
 
 /* Input and todo forms */
 
+.todo-input {
+  width:100%;
+}
+
 .form {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 1rem;
   gap: 1rem;
-  height: 4rem;
+/*   height: 4rem; */
   width: 100%;
+  word-break: break-all;
 }
 
 .draggable-form {
@@ -224,6 +229,7 @@ p {
   border-color: hsl(236, 9%, 61%);
   position: relative;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .delete-button {
