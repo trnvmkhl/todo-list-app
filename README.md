@@ -16,6 +16,7 @@
 
 ##Скриншоты
 ![Версия для десктопа](https://user-images.githubusercontent.com/40204735/132640730-bd7681ab-682b-4214-a181-c0365811e007.png)
-![Версия для мобильных устройств](https://user-images.githubusercontent.com/40204735/132640883-ef8ac837-b905-42a9-acea-afef95862c67.png)
+![Версия для мобильных устройств](https://user-images.githubusercontent.com/40204735/132641047-cc05cdf2-23df-494c-90b5-b5154ae7b38e.png)
+
 
 
